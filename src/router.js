@@ -5,7 +5,7 @@ import { AddExpensesPage } from './pages';
 export default class Router extends Component {
   render() {
     return (
-      <HashRouter>
+      <HashRouter style={{backgroundColor: 'green'}}>
         <div>
           <Route Path="/*" component={AddExpensesPage} />
         </div>
