@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import ExpenseInputRow from './expense-input-row'
+import ImmutablePropTypes from 'react-immutable-proptypes';
+import PropTypes from 'prop-types';
+import ExpenseAddSheet from './expense-add-sheet';
 
 const styles = {
   container: {
@@ -13,6 +15,9 @@ const styles = {
 
 export default class AddExpenses extends Component {
   static propTypes = {
+    draftExpenses: ImmutablePropTypes.listOf(
+      PropTypes.shape(Expense)
+    )
   }
 
   render() {
@@ -20,7 +25,7 @@ export default class AddExpenses extends Component {
       <div style={styles.container}>
         <div style={styles.title}>
           What is your expense for today?
-          <ExpenseInputRow />
+          <ExpensesAddSheet />
         </div>
       </div>
     );
