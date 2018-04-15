@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import PropTypes from 'prop-types';
-import ExpenseAddSheet from './expense-add-sheet';
+import ExpensesAddSheet from './expenses-add-sheet';
+import { Expense } from '../../models';
 
 const styles = {
   container: {
@@ -18,7 +19,7 @@ export default class AddExpenses extends Component {
     draftExpenses: ImmutablePropTypes.listOf(
       PropTypes.shape(Expense)
     )
-  }
+  };
 
   render() {
     return (
