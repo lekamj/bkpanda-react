@@ -3,12 +3,9 @@ import { actions } from '../constants';
 
 const initialState = new Record({
   draftExpenses: new List()
-});
+})();
 
-export default function DraftExpenseReducer(state = initialState, action = null) {
+export default function AddExpensesReducer(state = initialState, action = null) { 
   const { type, payload } = action;
-  switch(type) {
-    default:
-      return state
-  }
+  return state;
 }
