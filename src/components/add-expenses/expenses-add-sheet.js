@@ -1,20 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ImmutablePropTypes from 'react-immutable-proptypes';
+import Flexbox from 'flexbox-react';
 import { List } from 'immutable';
 import { Expense } from '../../models'
 import ExpenseInputRow from './expense-input-row'
 
 const styles = {
-  buttonContainer: {
-    flex: 1,
-    flexDirection: 'column'
-  },
   button: {
-    flex: 1,
     textAlign: 'left',
-    backgroundColor: 'red',
-    selfAlign: 'flex-start'
+    padding: 15,
+    border: '1px solid black'
   }
 }
 
@@ -29,20 +25,21 @@ export default class ExpensesAddSheet extends Component {
   render() {
     const { draftExpenses, style } = this.props;
     return (
-      <div style={style}>
+      <Flexbox flexDirection={'column'}>
         { draftExpenses && draftExpenses.map(this.renderExpenseInputRow) } 
-        <div style={styles.buttonContainer}>
-          <button style={styles.button} 
-                  onClick={this.onAddExpense}>
+        <Flexbox flexDirection={'row'}
+                 alignItems={'flex-start'}>
+          <div style={styles.button} 
+               onClick={this.onAddExpense}>
             Add Expenses
-          </button>
-          <button style={styles.button} 
-                  onClick={this.onAddExpense}>
-            Add Expenses
-          </button>
-        </div>
-      </div>
+          </div>
+        </Flexbox>
+      </Flexbox>
     );
+  }
+
+  onAddExpense = () => {
+    console.log('clicked');
   }
   
   renderExpenseInputRow = (draftExpense) => {
