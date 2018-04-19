@@ -7,5 +7,12 @@ const initialState = new Record({
 
 export default function AddExpensesReducer(state = initialState, action = null) { 
   const { type, payload } = action;
-  return state;
+  switch (type) {
+    case actions.APPEND_DRAFT_EXPENSE:
+      return state.update('draftExpenses', (draftExpenses) => (
+        draftExpenses.push(payload.newDraftExpense)
+      ));
+    default:
+      return state;
+  }
 }

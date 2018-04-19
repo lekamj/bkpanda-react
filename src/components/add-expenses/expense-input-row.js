@@ -58,7 +58,8 @@ export default class ExpenseInputRow extends Component {
     const placeholder = PlaceHolderByInputName[inputName]
     const value = valueByInputName[inputName]
     return (
-      <input style={styles.input}
+      <input key={idx} 
+             style={styles.input}
              type="text"
              name={inputName}
              placeholder={placeholder}
