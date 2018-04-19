@@ -6,11 +6,18 @@ import { Expense } from '../../models';
 
 const styles = {
   container: {
-    width: '100%'
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    backgroundColor: 'yellow'
   },
   title: {
     flex: 1,
     textAlign: 'center'
+  },
+  expenseSheetContianer: {
+    flex: 5,
+    backgroundColor: 'blue'
   }
 }
 
@@ -26,7 +33,7 @@ export default class AddExpenses extends Component {
       <div style={styles.container}>
         <div style={styles.title}>
           What is your expense for today?
-          <ExpensesAddSheet />
+          <ExpensesAddSheet style={styles.expenseSheetContianer}/>
         </div>
       </div>
     );
